@@ -1,0 +1,37 @@
+[package]
+name = "win-quran"
+version = "0.1.0"
+edition = "2024"
+description = "A native, always-on-top Qur'an reader widget for Windows"
+publish = false
+
+[dependencies]
+# Text shaping. rustybuzz is a port of HarfBuzz, which is the engine family
+# Chromium uses to draw the same text in the upstream web reader.
+rustybuzz = "0.20.1"
+# Decompression of the pinned WOFF2 font, so the shaper works on the exact font
+# whose SHA-256 this project records. Pure Rust, no C build step.
+wuff = { version = "0.2.9", features = ["brotli"] }
+# Rasterization of the shaped outlines into pixels. CPU only, so the widget needs
+# no GPU context and stays small.
+swash = "0.2.10"
+# The state files the reader shares with the quran-turn plugin are plain JSON.
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+# Win32: the window, its borderless layered surface, the tray icon and the
+# autostart registry value. The official Microsoft crate, not raw FFI.
+windows = { version = "0.62", features = [
+    "Win32_Foundation",
+    "Win32_Graphics_Gdi",
+    "Win32_System_LibraryLoader",
+    "Win32_System_Console",
+    "Win32_System_Registry",
+    "Win32_UI_HiDpi",
+    "Win32_UI_Shell",
+    "Win32_UI_WindowsAndMessaging",
+] }
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
