@@ -153,7 +153,7 @@ which `cargo run -- marker` can be used to inspect.
 
 ## Licenses
 
-The code in this repository has no license declared yet; that is an open decision.
+The code is MIT licensed; see [LICENSE](LICENSE).
 
 Bundled third-party material keeps its own terms: the Qur'an text and the metadata are copyright
 Tanzil Project, licensed CC BY 3.0 (`assets/LICENSE-TANZIL.md`), and the three fonts are licensed under

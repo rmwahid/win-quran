@@ -3,6 +3,7 @@ name = "win-quran"
 version = "0.1.0"
 edition = "2024"
 description = "A native, always-on-top Qur'an reader widget for Windows"
+license = "MIT"
 publish = false
 
 [dependencies]
