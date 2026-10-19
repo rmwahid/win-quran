@@ -1,0 +1,8 @@
+# Build output.
+/target
+
+# The default output of `win-quran dump` when no --out is given.
+/card.png
+
+# Tooling state, kept out of the repository like every other project here.
+.mimosa/

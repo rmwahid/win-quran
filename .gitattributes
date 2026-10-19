@@ -1,0 +1,11 @@
+# The Tanzil text and every other pinned asset are checked by SHA-256. Git must
+# never rewrite their line endings or the checksum stops matching and the widget
+# refuses to render. This mirrors the upstream quran-turn repository.
+#
+# The upstream metadata file (quran-data.js) is deliberately absent from this
+# repository: the generated Rust table is what gets committed, and regeneration
+# reads the upstream file after checking its SHA-256.
+assets/quran-uthmani.txt text eol=lf
+assets/SHA256SUMS text eol=lf
+*.woff2 binary
+*.txt text eol=lf
